@@ -123,9 +123,17 @@ Run `npm run dev` (or `npm run build && npm run preview`) and check:
 7. **Mobile (DevTools ~390px):** the hamburger menu opens, closes, and closes after tapping a link. There's no sideways scrolling, the filter tabs swipe horizontally, and the bag drawer is full-width and scrolls.
 8. **Keyboard:** Tab through the page. Focus rings are visible, Escape closes the bag and the menu, and the FAQ opens with Enter or Space.
 
-## Deployment
+## Deployment (Vercel)
 
-`npm run build` outputs a static site in `dist/`. Host it on any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, cPanel). No server or environment variables are needed.
+The site is a static build. `vercel.json` pins the settings: Vite, `npm ci`, `npm run build`, output `dist/`. No environment variables are needed.
+
+1. Go to https://vercel.com/new and sign in with GitHub.
+2. Import the **HeyitsOn/YSK-Laux-hair-** repository. The settings are filled in automatically.
+3. Click **Deploy**. You get a live `https://<project>.vercel.app` link.
+
+After that, every push to `main` redeploys automatically, and pull requests get preview links. To use your own domain, go to Project → Settings → Domains.
+
+`dist/` also works on any other static host (Netlify, Cloudflare Pages, cPanel).
 
 ## Adding online payments later
 
