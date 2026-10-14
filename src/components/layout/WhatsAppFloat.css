@@ -1,0 +1,41 @@
+.wa-float {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: var(--black);
+  background: var(--gold-gradient);
+  box-shadow:
+    0 12px 32px -10px rgba(201, 164, 92, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  transition: transform 0.35s var(--ease);
+}
+
+.wa-float::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid var(--gold);
+  animation: wa-ring 2.6s var(--ease) infinite;
+}
+
+.wa-float:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+
+@keyframes wa-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}

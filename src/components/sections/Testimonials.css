@@ -1,0 +1,70 @@
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  padding: 2.2rem 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.review__stars {
+  display: flex;
+  gap: 0.2rem;
+  color: var(--gold);
+}
+
+.review blockquote {
+  flex: 1;
+  margin: 1.4rem 0 1.8rem;
+}
+
+.review blockquote p {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.review__author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.review__author p {
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.review__author span {
+  color: var(--subtle);
+  font-size: 0.84rem;
+}
+
+.review__author .review__sample {
+  margin-left: auto;
+  padding: 0.1rem 0.55rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 960px) {
+  .reviews {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+}

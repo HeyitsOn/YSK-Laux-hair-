@@ -1,0 +1,106 @@
+.product-art {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 30%, rgba(214, 180, 108, 0.2), transparent 70%),
+    linear-gradient(180deg, #1d1a16 0%, #100f0d 100%);
+}
+
+.product-art--bundles {
+  background:
+    radial-gradient(ellipse 70% 55% at 30% 25%, rgba(214, 180, 108, 0.22), transparent 70%),
+    linear-gradient(160deg, #201b15 0%, #0f0e0c 100%);
+}
+
+.product-art--closures,
+.product-art--frontals {
+  background:
+    radial-gradient(ellipse 70% 55% at 70% 25%, rgba(214, 180, 108, 0.2), transparent 70%),
+    linear-gradient(200deg, #1f1b17 0%, #0e0d0b 100%);
+}
+
+.product-art--care {
+  background:
+    radial-gradient(circle at 50% 55%, rgba(214, 180, 108, 0.2), transparent 55%),
+    linear-gradient(180deg, #1a1714 0%, #0e0d0b 100%);
+}
+
+.product-art::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(201, 164, 92, 0.14);
+  pointer-events: none;
+}
+
+.product-art__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s var(--ease);
+}
+
+.product-art__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+
+@media (max-width: 600px) {
+  .product-art {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ---------- Real photos ---------- */
+
+.product-art--photo {
+  /* Matches the photos' white studio backdrop while they load. */
+  background: #f3f1ed;
+}
+
+.product-art--photo::before {
+  /* Very light warm fade at the bottom edge, so the white photo meets the dark card softly. */
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 18%;
+  background: linear-gradient(180deg, transparent, rgba(20, 18, 16, 0.18));
+  pointer-events: none;
+}
+
+.product-art--photo::after {
+  z-index: 2;
+}
+
+.product-art__img {
+  position: absolute;
+  inset: 0;
+}
+
+.product-art__img--alt {
+  opacity: 0;
+  transition:
+    opacity 0.7s var(--ease),
+    transform 1.2s var(--ease);
+}
+
+@media (hover: hover) {
+  .product-card:hover .has-alt .product-art__img--alt {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-art--photo {
+    aspect-ratio: 1 / 1;
+  }
+
+  .product-art--photo .product-art__img {
+    object-position: 50% 40%;
+  }
+}

@@ -1,0 +1,120 @@
+.contact {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--radius-lg) * 1.5);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.contact__cta {
+  position: relative;
+  padding: clamp(2.4rem, 6vw, 4.5rem);
+  background:
+    radial-gradient(ellipse 80% 70% at 0% 0%, rgba(201, 164, 92, 0.16), transparent 70%),
+    var(--surface);
+}
+
+.contact__cta h2 {
+  margin-top: 1.2rem;
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+}
+
+.contact__cta h2 em {
+  font-style: italic;
+}
+
+.contact__cta > p:not(.eyebrow) {
+  max-width: 460px;
+  margin: 1.4rem 0 2.2rem;
+  color: var(--muted);
+}
+
+.contact__details {
+  display: grid;
+  align-content: center;
+  gap: 1.8rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border-left: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+.contact__channels {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.contact__channel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem;
+  margin-inline: -0.7rem;
+  border-radius: var(--radius-lg);
+  transition: background-color 0.3s;
+}
+
+a.contact__channel:hover {
+  background: rgba(201, 164, 92, 0.07);
+}
+
+.contact__icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--gold-light);
+}
+
+.contact__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.contact__value {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.contact__hours {
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.contact__hours dl {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+}
+
+.contact__hours dl div {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.contact__hours dd {
+  margin: 0;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__details {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
